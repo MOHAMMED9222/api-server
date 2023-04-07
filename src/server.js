@@ -1,13 +1,13 @@
 'use strict';
 
 const express = require('express');
-const errorHandler = require('../src/error-handlers/500');
+const errorHandler = require('./error-handlers/500');
 
 const PORT = process.env.PORT || 3002;
-const notFound = require('../src/error-handlers/404');
+const notFound = require('./error-handlers/404');
 const app = express();
-const logger = require('./src/middleware/logger');
-const validator = require('../src/middleware/validator');
+const logger = require('../src/middleware/LOGGER.JS');
+const validator = require('./middleware/validator');
 
 
 

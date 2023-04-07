@@ -1,6 +1,8 @@
 "use strict";
 
-const logger = require("./logger");
+const logger = require('./LOGGER.JS');
+
+
 
 describe("Testing logger", () => {
   test("Checking a response from logger", () => {

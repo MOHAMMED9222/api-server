@@ -5,9 +5,11 @@ const server = require('./src/server');
 const { sequelize } = require('./src/models/index');
 
 sequelize.sync()
-.then(() => {
-  server.start(3001);
-})
-.catch(err => {
-  console.log('SQL CONNECTION ERROR: ', err);
-})
+  .then(() => {
+    server.start(3001, () => {
+      console.log('Server is up and running on port 3001');
+    });
+  })
+  .catch(err => {
+    console.log('SQL CONNECTION ERROR: ', err);
+  });
